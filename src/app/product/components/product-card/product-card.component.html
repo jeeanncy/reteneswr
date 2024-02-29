@@ -1,0 +1,34 @@
+<div class="overflow-hidden rounded-lg bg-white p-5 shadow-sm">
+  <img
+    *ngIf="imagen; else imagenPlaceHolder"
+    [src]="imagen"
+    class="mb-5 h-32 w-full object-contain"
+    alt="Imagen"
+  />
+  <ng-template #imagenPlaceHolder>
+    <div
+      class="round mb-5 flex h-32 items-center justify-center bg-gray-400 text-lg font-bold text-white"
+    >
+      IMAGEN
+    </div>
+  </ng-template>
+  <div class="flex flex-col">
+    <div class="flex justify-between gap-2">
+      <span class="text-lg font-bold">{{ nombre }}</span>
+      <i
+        *ngIf="isEditable"
+        id="product-card-opt"
+        class="fa-solid fa-ellipsis-vertical mt-1 cursor-pointer text-gray-400"
+      ></i>
+    </div>
+    <!-- <span class="block text-base font-bold mb-2">S/ 236</span> -->
+    <span class="mb-1 block text-sm text-gray-500">Stock: {{ stock }}</span>
+    <span class="mb-2 block text-sm font-normal"
+      >Dimensiones: {{ dimensiones }}</span
+    >
+    <span
+      class="w-full cursor-pointer text-right text-sm font-medium text-indigo-600"
+      >Ver más</span
+    >
+  </div>
+</div>

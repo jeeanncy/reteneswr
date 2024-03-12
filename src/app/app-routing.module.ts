@@ -4,6 +4,7 @@ import { ProductCatalogoComponent } from './product/components/product-catalogo/
 import { ProductGestionComponent } from './product/components/product-gestion/product-gestion.component';
 import { VentasFormComponent } from './ventas/components/ventas-form/ventas-form.component';
 import { FacturasFormComponent } from './facturas/components/facturas-form/facturas-form.component';
+import { ProductDetailComponent } from './product/components/product-detail/product-detail.component';
 
 const routes: Routes = [
   {
@@ -12,9 +13,19 @@ const routes: Routes = [
     component: ProductCatalogoComponent,
   },
   {
+    path: 'catalogo/detalle/:id',
+    title: 'Retenes WR - Catálogo',
+    component: ProductDetailComponent,
+  },
+  {
     path: 'gestion',
     title: 'Retenes WR - Gestión de Productos',
     component: ProductGestionComponent,
+  },
+  {
+    path: 'gestion/detalle/:id',
+    title: 'Retenes WR - Gestión de Productos',
+    component: ProductDetailComponent,
   },
   {
     path: 'ventas',

@@ -2,7 +2,7 @@
   <img
     *ngIf="imagen; else imagenPlaceHolder"
     [src]="imagen"
-    class="mb-5 h-32 w-full object-contain"
+    class="mb-5 h-32 w-full cursor-pointer object-contain"
     alt="Imagen"
   />
   <ng-template #imagenPlaceHolder>
@@ -26,9 +26,21 @@
     <span class="mb-2 block text-sm font-normal"
       >Dimensiones: {{ dimensiones }}</span
     >
-    <span
-      class="w-full cursor-pointer text-right text-sm font-medium text-indigo-600"
-      >Ver más</span
+    <a
+      class="w-full text-right text-sm font-medium"
+      [ngClass]="
+        isLinked
+          ? 'cursor-pointer text-indigo-600 '
+          : 'cursor-not-allowed text-gray-500'
+      "
+      [routerLink]="
+        isLinked
+          ? isEditable
+            ? '/gestion/detalle/12345'
+            : '/catalogo/detalle/12345'
+          : null
+      "
+      >Ver más</a
     >
   </div>
 </div>

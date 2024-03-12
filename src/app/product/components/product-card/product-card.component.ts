@@ -10,5 +10,7 @@ export class ProductCardComponent {
   @Input() nombre?: string = 'Nombre Producto';
   @Input() stock?: string = 'Sujeto a cambio';
   @Input() dimensiones?: string = 'Dimension del producto';
+  @Input() precio?: string;
   @Input() isEditable?: boolean = false;
+  @Input() isLinked?: boolean = false;
 }

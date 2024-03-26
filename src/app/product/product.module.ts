@@ -7,6 +7,7 @@ import { ProductGestionComponent } from './components/product-gestion/product-ge
 import { SharedModule } from '../shared/shared.module';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { RouterModule } from '@angular/router';
+import { ProductFormComponent } from './components/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     ProductCatalogoComponent,
     ProductGestionComponent,
     ProductDetailComponent,
+    ProductFormComponent,
   ],
   imports: [CommonModule, RouterModule, SharedModule],
   exports: [],

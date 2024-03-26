@@ -5,6 +5,7 @@ import { ProductGestionComponent } from './product/components/product-gestion/pr
 import { VentasFormComponent } from './ventas/components/ventas-form/ventas-form.component';
 import { FacturasFormComponent } from './facturas/components/facturas-form/facturas-form.component';
 import { ProductDetailComponent } from './product/components/product-detail/product-detail.component';
+import { ProductFormComponent } from './product/components/product-form/product-form.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,16 @@ const routes: Routes = [
     path: 'gestion/detalle/:id',
     title: 'Retenes WR - Gestión de Productos',
     component: ProductDetailComponent,
+  },
+  {
+    path: 'gestion/agregar',
+    title: 'Retenes WR - Agregar Producto',
+    component: ProductFormComponent,
+  },
+  {
+    path: 'gestion/editar/:id',
+    title: 'Retenes WR - Editar Producto',
+    component: ProductFormComponent,
   },
   {
     path: 'ventas',

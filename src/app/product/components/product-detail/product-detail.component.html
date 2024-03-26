@@ -2,10 +2,114 @@
 <app-header [title]="titleUrl" />
 <!-- Container -->
 <div class="h-[calc(100dvh-5rem)] overflow-y-auto">
-  <div class="m-5 bg-white p-5">
-    <img src="" alt="" />
-    <div>
-      <span>Junta Homocinética</span>
+  <div class="m-5">
+    <div class="flex w-full items-center gap-[3rem] rounded-lg bg-white p-6">
+      <img
+        src="assets/images/juntahomocinetica.webp"
+        class="h-auto w-4/5 cursor-pointer border border-gray-300 object-contain"
+        alt="Imagen"
+      />
+      <div>
+        <span class="text-2xl font-bold text-indigo-600">
+          Junta Homocinética
+        </span>
+        <!-- <div class="items-center justify-center gap-6"> -->
+        <div class="mt-4 bg-gray-200/70 p-4">
+          <span class="block text-base font-bold"
+            >Especificaciones principales</span
+          >
+          <span class="mt-2 block">Stock: 40 unidades</span>
+          <span class="block">Precio: S/. 25</span>
+          <span class="block">Dimensiones: 1.575x2.173x0.354</span>
+          <div class="my-4 h-[1px] w-full bg-gray-300"></div>
+          <div class="flex">
+            <div class="flex-1">
+              <span class="block text-base font-bold">Ubicación</span>
+              <span class="mt-2 block"
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dignissimos impedit aliquid dicta expedita voluptatibus quidem
+                deserunt reprehenderit harum odio nulla.</span
+              >
+            </div>
+            <div class="flex flex-1 justify-center">
+              <img
+                src="assets/images/almacen.webp"
+                class="h-[10rem] w-auto object-contain"
+                alt="Imagen"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 rounded-lg bg-white p-5">
+      <div class="flex items-center justify-between">
+        <span class="text-xl font-bold text-indigo-600"
+          >Vehiculos Relacionados</span
+        >
+      </div>
+      <table class="mt-4 w-full">
+        <tr class="bg-gray-200">
+          <th class="border border-gray-400 p-2 text-gray-500">Marca</th>
+          <th class="border border-gray-400 p-2 text-gray-500">Modelo</th>
+          <th class="border border-gray-400 p-2 text-gray-500">Año</th>
+          <th class="border border-gray-400 p-2 text-gray-500">
+            Imagen Referencial
+          </th>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 p-2 text-center">xxxxxx</td>
+          <td class="border border-gray-400 p-2 text-center">xxxxxx</td>
+          <td class="border border-gray-400 p-2 text-center">xxxx</td>
+          <td class="border border-gray-400 p-2" align="center">
+            <img src="assets/images/auto.jpg" alt="car" class="w-[10rem]" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 p-2 text-center">xxxxxx</td>
+          <td class="border border-gray-400 p-2 text-center">xxxxxx</td>
+          <td class="border border-gray-400 p-2 text-center">xxxx</td>
+          <td class="border border-gray-400 p-2" align="center">
+            <img src="assets/images/auto.jpg" alt="car" class="w-[10rem]" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 p-2 text-center">xxxxxx</td>
+          <td class="border border-gray-400 p-2 text-center">xxxxxx</td>
+          <td class="border border-gray-400 p-2 text-center">xxxx</td>
+          <td class="border border-gray-400 p-2" align="center">
+            <img src="assets/images/auto.jpg" alt="car" class="w-[10rem]" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 p-2 text-center">xxxxxx</td>
+          <td class="border border-gray-400 p-2 text-center">xxxxxx</td>
+          <td class="border border-gray-400 p-2 text-center">xxxx</td>
+          <td class="border border-gray-400 p-2" align="center">
+            <img src="assets/images/auto.jpg" alt="car" class="w-[10rem]" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 p-2 text-center">xxxxxx</td>
+          <td class="border border-gray-400 p-2 text-center">xxxxxx</td>
+          <td class="border border-gray-400 p-2 text-center">xxxx</td>
+          <td class="border border-gray-400 p-2" align="center">
+            <img src="assets/images/auto.jpg" alt="car" class="w-[10rem]" />
+          </td>
+        </tr>
+      </table>
+      <div class="mt-6 flex items-center justify-end">
+        <div class="flex gap-8">
+          <span>1-5 de 10</span>
+          <button class="cursor-pointer">
+            <i class="fas fa-angle-left text-gray-400"></i>
+          </button>
+          <button class="cursor-pointer">
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

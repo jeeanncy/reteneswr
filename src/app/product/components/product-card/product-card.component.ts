@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'product-card',
@@ -13,4 +14,19 @@ export class ProductCardComponent {
   @Input() precio?: string;
   @Input() isEditable?: boolean = false;
   @Input() isLinked?: boolean = false;
+
+  private router: Router = new Router();
+
+  opcionesTooltip = [
+    { texto: 'Editar', funcion: this.funcion1.bind(this) },
+    { texto: 'Eliminar', funcion: this.funcion2.bind(this) },
+  ];
+
+  funcion1() {
+    this.router.navigate(['/gestion/editar/12345']);
+  }
+
+  funcion2() {
+    console.log('Función 2 ejecutada');
+  }
 }

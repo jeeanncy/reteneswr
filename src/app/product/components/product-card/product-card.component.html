@@ -1,4 +1,4 @@
-<div class="overflow-hidden rounded-lg bg-white p-5 shadow-sm">
+<div class="rounded-lg bg-white p-5 shadow-sm">
   <img
     *ngIf="imagen; else imagenPlaceHolder"
     [src]="imagen"
@@ -15,11 +15,12 @@
   <div class="flex flex-col">
     <div class="flex justify-between gap-2">
       <span class="text-lg font-bold">{{ nombre }}</span>
-      <i
-        *ngIf="isEditable"
-        id="product-card-opt"
-        class="fa-solid fa-ellipsis-vertical mt-1 cursor-pointer text-gray-400"
-      ></i>
+      <app-tooltip [opciones]="opcionesTooltip">
+        <i
+          *ngIf="isEditable"
+          class="fa-solid fa-ellipsis-vertical mt-1 p-1 text-gray-400"
+        ></i>
+      </app-tooltip>
     </div>
     <!-- <span class="block text-base font-bold mb-2">S/ 236</span> -->
     <span class="mb-1 block text-sm text-gray-500">Stock: {{ stock }}</span>

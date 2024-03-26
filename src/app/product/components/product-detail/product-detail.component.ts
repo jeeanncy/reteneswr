@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ProductDetailComponent {
   titleUrl = '';
-  constructor(private router: Router) {}
+  private router: Router = new Router();
 
   ngOnInit() {
     const ruta = this.router.url.split('/')[1];

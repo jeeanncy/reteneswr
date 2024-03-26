@@ -1,0 +1,261 @@
+<!-- Header -->
+<app-header [title]="titleUrl">
+  <div class="flex h-full flex-1 items-center justify-end">
+    <button
+      class="flex cursor-pointer items-center rounded-md bg-indigo-600 p-3 font-semibold shadow-md"
+    >
+      <i class="fa-solid fa-floppy-disk mr-2 text-gray-100"></i>
+      <span class="text-sm text-gray-100"> Guardar</span>
+    </button>
+  </div>
+</app-header>
+<!-- Container -->
+<div class="h-[calc(100dvh-5rem)] overflow-y-auto p-5">
+  <form class="rounded-lg bg-white p-5">
+    <div>
+      <label
+        for="nombre"
+        class="inline-block w-28 text-base font-medium text-gray-700"
+      >
+        Nombre
+      </label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        required
+        class="inline-block w-2/5 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none"
+        [value]="isEditable ? 'Junta homocinética' : ''"
+      />
+    </div>
+    <h3 class="mt-6 text-lg font-bold">Especificaciones Principales</h3>
+    <div class="mt-6">
+      <label
+        for="stock"
+        class="inline-block w-28 text-base font-medium text-gray-700"
+      >
+        Stock
+      </label>
+
+      <input
+        type="number"
+        id="stock"
+        name="stock"
+        required
+        class="inline-block w-2/5 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none"
+        [value]="isEditable && 40"
+      />
+    </div>
+    <div class="mt-6">
+      <label
+        for="precio"
+        class="inline-block w-28 text-base font-medium text-gray-700"
+      >
+        Precio
+      </label>
+
+      <input
+        type="number"
+        id="precio"
+        name="precio"
+        required
+        class="inline-block w-2/5 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none"
+        [value]="isEditable && 25"
+      />
+    </div>
+    <div class="mt-6">
+      <label
+        for="dimensiones"
+        class="inline-block w-28 text-base font-medium text-gray-700"
+      >
+        Dimensiones
+      </label>
+
+      <input
+        type="text"
+        id="dimensiones"
+        name="dimensiones"
+        required
+        class="inline-block w-2/5 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none"
+        [value]="isEditable ? '1.575x2.173x0.354' : ''"
+      />
+    </div>
+    <h3 class="mt-6 text-lg font-bold">Ubicación</h3>
+    <div class="mt-6 flex">
+      <label
+        for="ubidesc"
+        class="inline-block w-28 text-base font-medium text-gray-700"
+      >
+        Descripcion
+      </label>
+
+      <textarea
+        type=""
+        id="ubidesc"
+        name="ubidesc"
+        required
+        class="inline-block h-20 w-2/5 rounded-lg border border-gray-300 px-3 py-2 focus:outline-none"
+        [value]="
+          isEditable
+            ? 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos impedit aliquid dicta expedita voluptatibus quidem deserunt reprehenderit harum odio nulla.'
+            : ''
+        "
+      ></textarea>
+    </div>
+    <div class="mt-6 flex">
+      <label
+        for="ubimg"
+        class="inline-block w-28 text-base font-medium text-gray-700"
+      >
+        Imagen
+      </label>
+
+      <div class="inline-block" *ngIf="isEditable; else imgUpload">
+        <img
+          src="assets/images/almacen.webp"
+          class="h-[10rem] w-auto object-contain"
+          alt="Imagen"
+        />
+        <div class="mt-2 flex items-baseline justify-end gap-2">
+          <span class="text-sm">Eliminar</span>
+          <i class="fa-solid fa-trash cursor-pointer text-sm text-red-600"></i>
+        </div>
+      </div>
+
+      <ng-template #imgUpload>
+        <input
+          type="file"
+          id="ubimg"
+          name="ubimg"
+          required
+          class="inline-block w-2/5 focus:outline-none"
+        />
+      </ng-template>
+    </div>
+
+    <div class="mt-12 rounded-lg border border-gray-300 p-5">
+      <div class="flex items-center justify-between">
+        <span class="text-xl font-bold text-indigo-600"
+          >Vehiculos Relacionados</span
+        >
+        <div class="flex items-center gap-4">
+          <div class="rounded-full bg-gray-100 px-3 py-2">
+            <i class="fa-solid fa-search mr-2 text-gray-400"></i>
+            <input
+              type="search"
+              placeholder="Buscar"
+              class="w-64 bg-transparent focus:outline-none"
+            />
+          </div>
+          <button
+            class="flex h-8 w-8 cursor-pointer items-center rounded-md border bg-indigo-600 p-2 font-semibold"
+          >
+            <i class="fa-solid fa-plus text-white"></i>
+          </button>
+        </div>
+      </div>
+      <table class="mt-6 w-full" *ngIf="isEditable; else emptyTable">
+        <tr class="bg-gray-200">
+          <th class="border border-gray-400 p-2 text-gray-500">Marca</th>
+          <th class="border border-gray-400 p-2 text-gray-500">Modelo</th>
+          <th class="border border-gray-400 p-2 text-gray-500">Año</th>
+          <th class="border border-gray-400 p-2 text-gray-500">
+            Imagen Referencial
+          </th>
+          <th class="border border-gray-400 p-2 text-gray-500">Acciones</th>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2" align="center">
+            <img src="assets/images/auto.jpg" alt="car" class="w-[10rem]" />
+          </td>
+          <td class="border border-gray-400 p-2 text-center">
+            <i class="fa-solid fa-pen text-indigo-600"></i>
+            <i class="fa-solid fa-trash ml-5 text-red-600"></i>
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2" align="center">
+            <img src="assets/images/auto.jpg" alt="car" class="w-[10rem]" />
+          </td>
+          <td class="border border-gray-400 p-2 text-center">
+            <i class="fa-solid fa-pen text-indigo-600"></i>
+            <i class="fa-solid fa-trash ml-5 text-red-600"></i>
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2" align="center">
+            <img src="assets/images/auto.jpg" alt="car" class="w-[10rem]" />
+          </td>
+          <td class="border border-gray-400 p-2 text-center">
+            <i class="fa-solid fa-pen text-indigo-600"></i>
+            <i class="fa-solid fa-trash ml-5 text-red-600"></i>
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2" align="center">
+            <img src="assets/images/auto.jpg" alt="car" class="w-[10rem]" />
+          </td>
+          <td class="border border-gray-400 p-2 text-center">
+            <i class="fa-solid fa-pen text-indigo-600"></i>
+            <i class="fa-solid fa-trash ml-5 text-red-600"></i>
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2 text-center">-</td>
+          <td class="border border-gray-400 p-2" align="center">
+            <img src="assets/images/auto.jpg" alt="car" class="w-[10rem]" />
+          </td>
+          <td class="border border-gray-400 p-2 text-center">
+            <i class="fa-solid fa-pen text-indigo-600"></i>
+            <i class="fa-solid fa-trash ml-5 text-red-600"></i>
+          </td>
+        </tr>
+      </table>
+
+      <ng-template #emptyTable>
+        <table class="mt-6 w-full">
+          <tr class="bg-gray-200">
+            <th class="border border-gray-400 p-2 text-gray-500">Marca</th>
+            <th class="border border-gray-400 p-2 text-gray-500">Modelo</th>
+            <th class="border border-gray-400 p-2 text-gray-500">Año</th>
+            <th class="border border-gray-400 p-2 text-gray-500">
+              Imagen Referencial
+            </th>
+            <th class="border border-gray-400 p-2 text-gray-500">Acciones</th>
+          </tr>
+          <tr>
+            <td class="h-40 border border-gray-400 p-2 text-center" colspan="5">
+              No se han registrado filas
+            </td>
+          </tr>
+        </table>
+      </ng-template>
+
+      <div class="mt-6 flex items-center justify-end" *ngIf="isEditable">
+        <div class="flex gap-8">
+          <span>1-5 de 10</span>
+          <button class="cursor-pointer">
+            <i class="fas fa-angle-left text-gray-400"></i>
+          </button>
+          <button class="cursor-pointer">
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

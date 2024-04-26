@@ -1,6 +1,6 @@
 <main class="flex h-dvh">
   <!-- LeftBar -->
-  <aside
+  <!-- <aside
     class="z-10 flex h-full flex-col border-r border-gray-300 shadow-[rgba(0,0,0,0.10)_5px_1px_14px_-3px]"
   >
     <div
@@ -69,8 +69,60 @@
         Cerrar sesión
       </span>
     </div>
-  </aside>
+  </aside> -->
   <div class="flex-1 bg-gray-100">
+    <div
+      class="sticky flex h-20 items-center gap-10 border border-b border-gray-300 bg-white px-10"
+    >
+      <img src="assets/images/logo.png" alt="WRetenes" class="h-6" />
+      <ul class="flex flex-1 justify-center gap-4">
+        <li
+          routerLink="catalogo"
+          routerLinkActive="font-semibold"
+          class="cursor-pointer px-2 text-xl"
+        >
+          <!-- <i
+            routerLinkActive="text-indigo-700"
+            class="fa-solid fa-book mr-2 text-gray-500"
+          ></i> -->
+          Catálogo
+        </li>
+        <li
+          routerLink="gestion"
+          routerLinkActive="font-semibold"
+          class="cursor-pointer px-2 text-lg"
+        >
+          <!-- <i
+            routerLinkActive="text-indigo-700"
+            class="fa-solid fa-pen mr-2 text-gray-500"
+          ></i> -->
+          Gestión de Productos
+        </li>
+        <li
+          routerLink="ventas"
+          routerLinkActive="font-semibold"
+          class="cursor-pointer px-2 text-lg"
+        >
+          <!-- <i
+            routerLinkActive="text-indigo-700"
+            class="fa-solid fa-file-waveform mr-2 text-gray-500"
+          ></i> -->
+          Ventas
+        </li>
+        <li
+          routerLink="facturas"
+          routerLinkActive="font-semibold"
+          class="cursor-pointer px-2 text-lg"
+        >
+          <!-- <i
+            routerLinkActive="text-indigo-700"
+            class="fa-solid fa-file-invoice-dollar mr-2 text-gray-500"
+          ></i> -->
+          Facturas
+        </li>
+      </ul>
+      <div class="w-[8.146rem]"></div>
+    </div>
     <router-outlet></router-outlet>
   </div>
 </main>
